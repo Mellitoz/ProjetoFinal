@@ -1,0 +1,15 @@
+Tipos de Teste
+Teste de funcionalidade: para validar se o sistema realiza corretamente as ações básicas (cadastro, login, etc.);
+
+Teste de validação de regras de negócio: como valor total = peso × preço;
+
+Teste de segurança simples: impedir acesso não autorizado via rotas protegidas;
+
+Teste unitário com Jest: funções dos serviços isoladamente.
+
+Critérios de Saída
+Todos os testes devem ser executados sem falhas;
+
+Os dados inseridos no banco devem refletir corretamente as ações testadas;
+
+As mensagens de erro devem ser exibidas corretamente.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Preço do KG - AssistFood</title>
+    <!-- Link para a folha de estilos centralizada -->
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+    <!-- Ícone do menu e Overlay (controlado pelo main.js) -->
+    <span class="menu-icon">☰</span>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar (controlado pelo main.js) -->
+    <div id="sidebar" class="sidebar">
+        <a href="lancar-comanda.html">Nova Comanda</a>
+        <a href="cadastro-item.html">Gerenciar Itens</a>
+        <a href="listagem.html">Listagens</a>
+        <a href="pagar-comanda.html">Pagar Comanda</a>
+    </div>
+ 
+    <div class="main-container" style="align-items: center;">
+        <div class="content-wrapper" style="max-width: 500px; text-align: center;">
+            <h1>Cadastrar/Atualizar Preço do KG</h1>
+
+            <form id="quiloForm">
+                <input type="number" id="precoKg" placeholder="Preço do kg (ex: 49.90)" step="0.01" required />
+                <button type="submit">Salvar Preço</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script principal para a sidebar -->
+    <script src="../script/main.js"></script>
+    <!-- Script específico da página -->
+    <script src="../script/cadastro-quilo.js"></script>
+</body>
+</html>

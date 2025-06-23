@@ -1,0 +1,22 @@
+1. Introdução
+O sistema AssistFood representa uma solução prática para restaurantes self-service que lidam com fluxo contínuo de clientes. Ele automatiza o cálculo da refeição com base no peso e armazena digitalmente todas as informações de atendimento.
+
+2. Planejamento e Estratégia
+O projeto seguiu uma metodologia incremental. O backend foi implementado em Node.js utilizando Express e Sequelize, com armazenamento em SQLite. O frontend foi criado com HTML/CSS/JS e os testes unitários foram desenvolvidos com Jest.
+
+3. Resultados
+Foram realizados diversos testes simulando o uso real do sistema. Todos os critérios de aceitação definidos nas histórias de usuário foram atendidos.
+
+4. Evidências
+As evidências dos testes (prints/logs) demonstram o sucesso na execução dos cenários:
+
+Cadastro de item válido
+
+Cadastro de item inválido
+
+Login válido e inválido
+
+Cálculo correto da comanda
+
+5. Conclusão
+O AssistFood atingiu todos os objetivos propostos, oferecendo uma solução confiável e eficiente. O projeto apresenta valor acadêmico e prático, e está apto para futuras expansões (como integração com balanças físicas ou pagamentos automáticos).

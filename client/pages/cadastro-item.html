@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Itens - AssistFood</title>
+    <!-- Link para a folha de estilos centralizada -->
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+    <!-- Ícone do menu e Overlay (controlado pelo main.js) -->
+    <span class="menu-icon">☰</span>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar (controlado pelo main.js) -->
+    <div id="sidebar" class="sidebar">
+        <a href="lancar-comanda.html">Nova Comanda</a>
+        <a href="cadastro-quilo.html">Definir Preço/KG</a>
+        <a href="listagem.html">Listagens</a>
+        <a href="pagar-comanda.html">Pagar Comanda</a>
+    </div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <h1>Gerenciamento de Itens</h1>
+
+            <form id="itemForm">
+                <input type="hidden" id="itemId" />
+                <input type="text" id="nome" placeholder="Nome do Item" required />
+
+                <select id="tipo" required>
+                    <option value="" disabled selected hidden>Selecione o tipo do item</option>
+                    <option value="Bebida">Bebida</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <input type="number" id="preco" placeholder="Preço (ex: 4.50)" step="0.01" required />
+
+                <button type="submit" id="botaoSubmit" class="botao-salvar">Cadastrar Item</button>
+            </form>
+
+            <h2 style="margin-top: 40px;">Itens Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        <th style="text-align: right;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaItens">
+                    <!-- Linhas da tabela serão inseridas aqui pelo JS -->
+                </tbody>
+            </table>
+            <div id="paginacaoContainer" style="margin-top:20px; display: flex; justify-content: center; gap: 10px; align-items: center;">
+                <button id="anterior" style="padding: 8px 16px;">Anterior</button>
+                <span id="infoPagina"></span>
+                <button id="proxima" style="padding: 8px 16px;">Próxima</button>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Script principal para a sidebar -->
+    <script src="../script/main.js"></script>
+    <!-- Script específico da página -->
+    <script src="../script/cadastro-item.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "assistfood",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.3.0"
+  },
+  "description": "Sistema de restaurante self-service com backend e frontend integrados.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.5.0",
+    "jest": "^30.0.2",
+    "supertest": "^7.1.1"
+  }
+}

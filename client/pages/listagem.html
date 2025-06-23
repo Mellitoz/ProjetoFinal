@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagens - AssistFood</title>
+    <!-- Link para a folha de estilos centralizada -->
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+    <!-- Ícone do menu e Overlay (controlado pelo main.js) -->
+    <span class="menu-icon">☰</span>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar (controlado pelo main.js) -->
+    <div id="sidebar" class="sidebar">
+        <a href="lancar-comanda.html">Nova Comanda</a>
+        <a href="cadastro-item.html">Gerenciar Itens</a>
+        <a href="cadastro-quilo.html">Definir Preço/KG</a>
+        <a href="pagar-comanda.html">Pagar Comanda</a>
+    </div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <h1>Listagens Gerais</h1>
+
+            <!-- Seção de Comandas -->
+            <h2>Comandas Registradas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Data</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaComandas">
+                    <!-- Conteúdo dinâmico aqui -->
+                </tbody>
+            </table>
+            <div id="paginacao-comandas" class="pagination" style="text-align: center; margin-top: 15px;"></div>
+
+            <!-- Seção de Itens -->
+            <h2 style="margin-top: 40px;">Itens Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaItens">
+                    <!-- Conteúdo dinâmico aqui -->
+                </tbody>
+            </table>
+            <div id="paginacao-itens" class="pagination" style="text-align: center; margin-top: 15px;"></div>
+
+        </div>
+    </div>
+
+    <!-- Script principal para a sidebar -->
+    <script src="../script/main.js"></script>
+    <!-- Script específico da página -->
+    <script src="../script/listagem.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+– Cadastrar Item
+Como atendente,
+Quero cadastrar e editar itens como bebidas e sobremesas,
+Para manter os produtos e preços atualizados no sistema.
+
+Critérios de Aceitação
+O nome do item deve ser único.
+
+Deve haver validação dos campos obrigatórios.
+
+Deve exibir mensagem de sucesso ou erro.
+
+Tarefas Técnicas
+Criar formulário HTML com campos: nome, tipo, preço.
+
+Validar dados no frontend e backend.
+
+Inserir item no banco usando Sequelize.
+
+– Registrar Comanda
+Como atendente,
+Quero registrar uma comanda com o peso da refeição e os itens escolhidos,
+Para que o sistema calcule automaticamente o valor a ser pago pelo cliente.
+
+Critérios de Aceitação
+O sistema deve calcular valor total com base no peso x preço/kg.
+
+O sistema deve permitir escolher múltiplos itens.
+
+A comanda deve ser salva com data e hora.

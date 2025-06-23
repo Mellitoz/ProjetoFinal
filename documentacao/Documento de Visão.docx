@@ -1,0 +1,31 @@
+1. Introdução
+O sistema AssistFood é um software desenvolvido com foco em restaurantes do tipo self-service por quilo. A proposta é substituir processos manuais de atendimento e cálculo de valor por um sistema digital, rápido, seguro e de fácil usabilidade para atendentes e clientes.
+
+2. Propósito
+Descrever os principais aspectos do sistema, suas funcionalidades, públicos-alvo, restrições e os riscos envolvidos.
+
+3. Escopo
+O sistema oferece:
+
+Login de atendentes;
+
+Cadastro de itens (com nome, tipo e preço por kg);
+
+Cadastro de comandas (registrando pesagem, itens e cálculo do valor);
+
+Listagem de itens e comandas para controle interno;
+
+Interface simples via navegador;
+
+Armazenamento local via SQLite.
+
+4. Benefícios
+Agilidade no atendimento;
+
+Precisão no valor cobrado;
+
+Redução de filas;
+
+Registro digital das comandas;
+
+Facilidade de uso para funcionários com pouca experiência digital.

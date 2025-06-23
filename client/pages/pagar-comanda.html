@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar Comanda - AssistFood</title>
+    <!-- Link para a folha de estilos centralizada -->
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+    <!-- Ícone do menu e Overlay (controlado pelo main.js) -->
+    <span class="menu-icon">☰</span>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar (controlado pelo main.js) -->
+    <div id="sidebar" class="sidebar">
+        <a href="lancar-comanda.html">Nova Comanda</a>
+        <a href="cadastro-item.html">Gerenciar Itens</a>
+        <a href="cadastro-quilo.html">Definir Preço/KG</a>
+        <a href="listagem.html">Listagens</a>
+    </div>
+
+    <div class="main-container" style="align-items: center;">
+        <div class="content-wrapper" style="max-width: 600px;">
+            <h1>Pagar Comanda</h1>
+
+            <form id="buscarForm" style="flex-direction: row; justify-content: center; align-items: center;">
+                <input type="number" id="numeroComandaBusca" placeholder="Número da Comanda" required />
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div id="detalhesComanda" style="display: none; margin-top: 20px;">
+                <h2>Detalhes da Comanda</h2>
+                <ul id="listaItensComanda" style="list-style: none; padding: 0;">
+                    <!-- Detalhes dos itens serão inseridos aqui -->
+                </ul>
+                <p style="text-align: right; font-size: 1.2em; margin-top: 15px;">
+                    <strong>Total: R$ <span id="totalValor">0.00</span></strong>
+                </p>
+                <button id="btnFinalizarPagamento" style="width: 100%; margin-top: 10px;">Finalizar Pagamento</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal para a sidebar -->
+    <script src="../script/main.js"></script>
+    <!-- Script específico da página -->
+    <script src="../script/pagar-comanda.js"></script>
+</body>
+</html>

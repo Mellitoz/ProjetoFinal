@@ -1,0 +1,16 @@
+Login de Atendente
+
+Campo -->	Valor
+Identificador -->	CT03
+Descrição -->	Validar o login com dados corretos e incorretos
+Passos para execução -->	Inserir login e senha e clicar em "Entrar"
+Dados de entrada -->	Email: joao@assistfood.com / Senha: 1234
+Saída esperada -->	Redirecionamento para o painel de opções
+Critério de sucesso -->	Mensagem “Login realizado com sucesso” exibida
+
+Cadastro de Item com erro
+
+Identificador -->	CT04
+Descrição -->	Validar erro ao cadastrar item vazio
+Entrada -->	Nome: "" / Tipo: Bebida / Preço: 10
+Esperado -->	Exibir mensagem: “Nome é obrigatório”
