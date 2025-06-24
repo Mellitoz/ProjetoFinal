@@ -3,19 +3,15 @@
 const request = require('supertest');
 const app = require('./server');
 
-// --- MOCKING SETUP ---
-// Primeiro, importamos o módulo que vamos imitar.
-// O Jest vai substituir esta importação pela nossa imitação abaixo.
 const admin = require('firebase-admin');
 
-// A imitação do Firebase agora expõe as suas próprias funções de mock.
 jest.mock('firebase-admin', () => {
-    // Criamos as funções de mock aqui dentro, no escopo correto.
+
     const get = jest.fn();
     const add = jest.fn();
     const update = jest.fn();
     const set = jest.fn();
-    const deleteFunc = jest.fn(); // Usamos deleteFunc para não colidir com a palavra 'delete'
+    const deleteFunc = jest.fn(); 
     const where = jest.fn();
     const doc = jest.fn(() => ({
         get,
@@ -23,8 +19,7 @@ jest.mock('firebase-admin', () => {
         set,
         delete: deleteFunc,
     }));
-
-    // Criamos a função firestore e adicionamos FieldValue como uma propriedade
+    
     const firestore = () => ({
         collection: jest.fn(() => ({
             get,
@@ -39,12 +34,10 @@ jest.mock('firebase-admin', () => {
         serverTimestamp: jest.fn(),
     };
 
-    // Retornamos um objeto que inclui a estrutura imitada E as próprias funções de mock.
     return {
         initializeApp: jest.fn(),
         credential: { cert: jest.fn() },
         firestore,
-        // Expomos as funções para que os testes as possam controlar.
         mockGet: get,
         mockAdd: add,
         mockUpdate: update,
@@ -54,7 +47,7 @@ jest.mock('firebase-admin', () => {
     };
 });
 
-// --- CONTROLE DO SERVIDOR DE TESTES ---
+
 let server;
 beforeAll((done) => {
     server = app.listen(3001, done);
@@ -63,16 +56,14 @@ afterAll((done) => {
     server.close(done);
 });
 
-// --- RESET DOS MOCKS ANTES DE CADA TESTE ---
+
 beforeEach(() => {
-    // Limpa o estado de todos os mocks para garantir que os testes são independentes.
+
     jest.clearAllMocks();
 });
 
-// --- SUÍTE DE TESTES COM ALTA COBERTURA ---
 describe('Testes de API do AssistFood', () => {
 
-    // --- ROTAS DE ITENS ---
     describe('/itens', () => {
         it('GET /itens - Deve retornar uma lista de itens e status 200', async () => {
             admin.mockGet.mockResolvedValue({ docs: [{ id: '1', data: () => ({ nome: 'Coca-Cola' }) }] });
@@ -124,7 +115,6 @@ describe('Testes de API do AssistFood', () => {
         });
     });
 
-    // --- ROTAS DE COMANDAS ---
     describe('/comandas', () => {
         it('GET /comandas - Deve retornar uma lista de comandas e status 200', async () => {
             admin.mockGet.mockResolvedValue({ docs: [] });
@@ -194,7 +184,7 @@ describe('Testes de API do AssistFood', () => {
         });
     });
 
-    // --- ROTAS DE CONFIGURAÇÃO ---
+
     describe('/quilo', () => {
          it('GET /quilo - Deve retornar 200 e 0 se o documento não existir', async () => {
             admin.mockGet.mockResolvedValue({ exists: false });
@@ -228,7 +218,7 @@ describe('Testes de API do AssistFood', () => {
         });
     });
 
-    // --- ROTA DE LOGIN ---
+
     describe('/login', () => {
         it('POST /login - Deve retornar 401 para credenciais inválidas', async () => {
             const res = await request(server).post('/login').send({ usuario: 'atendente', senha: 'senha_errada' });
