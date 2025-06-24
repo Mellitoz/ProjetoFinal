@@ -10,7 +10,7 @@ describe('Fluxo Completo do Atendente', () => {
     const precoKg = '55.90';
     const numeroComanda = Math.floor(Math.random() * 900) + 100;
 
-    // Função auxiliar que navega pelas páginas até encontrar o texto desejado
+ 
     const findInTable = (textToFind) => {
         cy.get('body').then($body => {
             if ($body.find(`td:contains("${textToFind}")`).length) {
@@ -108,8 +108,7 @@ describe('Fluxo Completo do Atendente', () => {
           .parent('tr')
           .find('.excluir')
           .click();
-        
-        // CORREÇÃO: Espera explicitamente pela conclusão do pedido DELETE
+   
         cy.wait('@deleteItem'); 
         
         cy.contains('td', novoItem.nome).should('not.exist');
